@@ -88,11 +88,11 @@ if (form) {
   let index = 0;
 
   // Function to change hero background image
-  function changeHeroBackground() {
-    hero.style.backgroundImage = `url('.${images[index]}')`;
-    index = (index + 1) % images.length;  
-    // (%) ensures it loops back to the first image
-  }
+ function changeHeroBackground() {
+  hero.style.backgroundImage = `url(${images[index]})`;
+  index = (index + 1) % images.length;
+}
+
 
   // Set initial image
   changeHeroBackground();
