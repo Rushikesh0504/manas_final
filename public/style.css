@@ -1,0 +1,479 @@
+/* ============================================================
+   GLOBAL STYLES  
+   ============================================================ */
+* {
+  margin-top: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f4f6fa;
+  color: #222;
+  scroll-behavior: smooth;
+}
+
+/* ============================================================
+   HEADER  
+   ============================================================ */
+header {
+  width: 100%;
+  background: #0A1F33;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+      height: 90px;
+
+
+  /* Sticky header */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo + Title Container */
+/* LOGO SECTION */
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-area img {
+  height: 62px;
+  border-radius: 3px;
+  transition: transform .9s;
+}
+
+.logo-area img:hover {
+  transform: scale(1.06);
+}
+
+.logo-text h1 {
+  color: #d0b909;
+  font-size: 22px;
+  margin: 0;
+  letter-spacing: 1px;
+      padding-top: 26px;
+
+}
+
+.logo-text h2 {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: -4px;
+  /* brings it closer to MANAS */
+}
+
+
+/* Navigation Links */
+nav a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: 0.25s;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #FFC727;
+  transform: translateY(-3px);
+}
+
+/* ============================================================
+   HERO SECTION (with JS slideshow support)
+   ============================================================ */
+.hero {
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  color: #fff;
+  padding: 24px;
+
+  /* Smooth transition for background slideshow */
+  transition: background-image 1s ease-in-out;
+}
+
+/* Dark overlay above background images */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+.hero * {
+  position: relative;
+  z-index: 2;
+  /* Text stays above overlay */
+}
+
+/* Hero Text */
+.hero-inner h1 {
+  font-size: 44px;
+  margin-bottom: 8px;
+}
+
+.hero-inner p {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+/* CTA Button */
+.btn {
+  display: inline-block;
+  padding: 12px 26px;
+  background: #FFC727;
+  border-radius: 8px;
+  color: #111;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+}
+
+/* ============================================================
+   SECTIONS  
+   ============================================================ */
+section {
+  padding: 56px 28px;
+}
+
+h2 {
+  text-align: center;
+  color: #0A1F33;
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+/* ============================================================
+   SERVICES GRID  
+   ============================================================ */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.service-card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+}
+
+.service-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+/* ============================================================
+   ABOUT SECTION  
+   ============================================================ */
+.about-box {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-box img {
+  width: 45%;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.about-box div {
+  flex: 1;
+}
+
+/* ============================================================
+   TEAM SECTION  
+   ============================================================ */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.team-card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+}
+
+.team-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* ============================================================
+   CONTACT SECTION  
+   ============================================================ */
+.contact-wrap {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Contact Form Box */
+.contact-form {
+  flex: 1;
+  min-width: 280px;
+  max-width: 650px;
+  background: #fff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* Two Inputs Row */
+.contact-form .input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+}
+
+/* Submit row */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.form-status {
+  font-size: 14px;
+  color: #0A1F33;
+}
+
+/* Quick contact box */
+.contact-quick {
+  min-width: 220px;
+  max-width: 320px;
+  padding: 18px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* Quick contact social icons */
+.contact-icons {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.contact-icons a {
+  color: #0a2239;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.contact-icons a:hover {
+  transform: scale(1.2);
+  color: #ffcf2f;
+}
+
+/* ============================================================
+   MAP SECTION  
+   ============================================================ */
+.map-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+/* ============================================================
+   FOOTER  
+   ============================================================ */
+footer {
+  background: #0A1F33;
+  color: #fff;
+  padding: 18px;
+  text-align: center;
+}
+
+/* ============================================================
+   SCROLL FADE ANIMATION  
+   ============================================================ */
+.fade-scroll {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-scroll.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Prevent section headings from hiding behind the fixed navbar */
+section {
+  scroll-margin-top: 90px;   /* Adjust based on your navbar height */
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN  
+   ============================================================ */
+@media(max-width: 900px) {
+
+   section {
+    scroll-margin-top: 120px; 
+  }
+  /* Hide MANAS text on small screens */
+  .logo-area h1 {
+    display: flex;
+  }
+
+  /* Reduce hero title size */
+  .hero-inner h1 {
+    font-size: 32px;
+  }
+
+  /* About image becomes full width */
+  .about-box img {
+    width: 100%;
+  }
+
+  /* Contact layout stacks vertically */
+  .contact-wrap {
+    flex-direction: column;
+  }
+
+  /* =============================
+   HAMBURGER MENU (MOBILE)
+   ============================= */
+
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 9999;
+     margin-right: 35px;
+  }
+
+  .hamburger span {
+    width: 28px;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transition: 0.4s;
+  }
+
+  /* Navigation default desktop view */
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  /* Mobile Navigation */
+  @media(max-width: 900px) {
+    .logo-text h2 {
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 500;
+      margin-top: -4px;
+       margin-left: -3px;
+            width: 95px;
+      /* brings it closer to MANAS */
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    nav.nav-links {
+      position: absolute;
+      top: 70px;
+      right: 0;
+      background: #0A1F33;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding: 15px 0;
+      gap: 12px;
+      transform: translateY(-200%);
+      opacity: 0;
+      transition: 0.45s ease;
+    }
+
+    /* Show when active */
+    nav.nav-links.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    nav.nav-links a {
+      padding: 12px 0;
+      font-size: 18px;
+    }
+
+    /* Hamburger animation */
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+  }
+
+}
+
+/* ============================================================
+   END OF STYLE.CSS  
+   ============================================================ */
